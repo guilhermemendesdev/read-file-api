@@ -5,11 +5,9 @@ RUN mkdir -p /home/node/api/node_modules && chown -R node:node /home/node/api
 
 WORKDIR /home/node/api
 COPY package.json ./
-COPY package-lock.json ./
 
 # Limpar o cache e instalar as dependências
 RUN npm cache clean --force
-RUN rm -rf node_modules package-lock.json
 RUN npm install --include=optional
 
 # Copiar o restante dos arquivos da aplicação

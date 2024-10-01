@@ -1,5 +1,4 @@
 import HttpStatus from "http-status";
-import sharp from "sharp";
 import path from "path";
 import fs from "fs";
 
@@ -67,10 +66,9 @@ class Util {
     }
 
     try {
-      // Processa e salva a imagem
-      const data = await sharp(imgBuffer).resize(1920, null).toFile(filePath);
-
-      console.log("Imagem salva com sucesso: ", data, filePath);
+      // Salva a imagem no caminho especificado
+      fs.writeFileSync(filePath, imgBuffer);
+      console.log("Imagem salva com sucesso: ", filePath);
     } catch (err) {
       console.error(`Erro ao salvar a imagem: ${err}`);
     }

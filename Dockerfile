@@ -8,7 +8,7 @@ COPY --chown=node:node package.json ./
 
 # Limpar o cache e instalar as dependências
 RUN npm cache clean --force
-RUN npm install --include=optional sharp
+RUN npm install
 
 # Copiar o restante dos arquivos da aplicação
 COPY --chown=node:node . .

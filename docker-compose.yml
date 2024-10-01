@@ -12,7 +12,7 @@ services:
       - MONGO_URL=mongodb://mongodb:27017/ia-measure
     volumes:
       - .:/home/node
-    working_dir: /home/node/dist  # Alterado para dist
+    working_dir: /home/node
     depends_on:
       - mongodb
 

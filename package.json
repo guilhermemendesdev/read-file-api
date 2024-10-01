@@ -14,6 +14,11 @@
     "docker:up": "docker-compose up --build",
     "docker:down": "docker-compose down"
   },
+    "os": [
+    "win32",
+    "darwin",
+    "linux"
+  ],
   "author": {
     "name": "Guilherme Mendes",
     "email": "guilhermesousa@anapolis.go.gov.br"

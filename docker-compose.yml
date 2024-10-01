@@ -11,7 +11,8 @@ services:
       - GEMINI_API_KEY=${GEMINI_API_KEY}
       - MONGO_URL=mongodb://mongodb:27017/ia-measure
     volumes:
-      - .:/home/node/api
+      - .:/home/node
+    working_dir: /home/node/dist  # Alterado para dist
     depends_on:
       - mongodb
 

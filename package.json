@@ -5,7 +5,7 @@
   "main": "src/server.ts",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "sucrase ./src -d ./dist --transforms typescript,imports",
+    "build": "sucrase ./src -d ./build --transforms typescript,imports",
     "dev": "nodemon dist/src/server.js",
     "start:dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
     "start:test": "pm2 start dist/src/server.js --name read-file-api",

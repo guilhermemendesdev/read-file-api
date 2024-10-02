@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   app:
     build:
@@ -10,11 +8,10 @@ services:
     environment:
       - GEMINI_API_KEY=${GEMINI_API_KEY}
       - MONGO_URL=mongodb://mongodb:27017/ia-measure
-    volumes:
-      - .:/home/node
-    working_dir: /home/node
     depends_on:
       - mongodb
+    networks:
+      - node-network
 
   mongodb:
     image: mongo:latest
@@ -22,6 +19,13 @@ services:
       - "27017:27017"
     volumes:
       - mongodb_data:/data/db
+    networks:
+      - node-network
 
 volumes:
   mongodb_data:
+
+
+networks:
+  node-network:
+    driver: bridge
